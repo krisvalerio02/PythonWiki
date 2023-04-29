@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+
+{% block page_name %}
+<center>
+{%if author%}
+<h1>{{author}}</h1>
+<div class="comment_author_div">
+{% for page in pages %} 
+<a href = "https://storage.googleapis.com/wiki-user-uploads/wiki-user-uploads/{{page[18::]}}">{{page.split('/')[-1]}}</a>
+<form method="POST" action="/submit_comment">
+    <input type="text" name="comment" placeholder="comment"required/>
+    <br><br>
+    <input type="submit" value="comment"/>
+    <br><br>
+</form>
+<a href="/view_comment">View Comments</a>
+<br><br>
+{% endfor %}
+</div>
+
+
+
+{%endif%}
+{{message}}
+</center>
+{% endblock %}

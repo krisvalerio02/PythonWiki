@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block page_name %}
+<center>
+    {% for item in result.values()%}
+<h3>Username: {{item['Username']}} &nbsp;&nbsp;&nbsp;&nbsp;Comment: {{item['Comment']}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item['Time']}}</h3>
+{% endfor %}
+</center>
+{% endblock %}
+
+
+</body>
+</html>

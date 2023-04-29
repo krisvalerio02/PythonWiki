@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block page_name %}
+  <h1>A closer look at your activity {{ username}}</h1>
+  <div id='chart' class='chart'></div>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+  // Replace {{graphJSON | safe}} with actual data or appropriate JavaScript code
+  var graph1 = {{graphJSON | safe}};
+  Plotly.plot('chart',graph1,{});
+</script>
+{% endblock %}
+

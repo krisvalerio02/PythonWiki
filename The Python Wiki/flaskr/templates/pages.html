@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+    
+{% block page_name %}
+<center>
+<h1>Authors</h1>
+</center>     
+
+<form method="POST" sction="/author">
+    <input type="text" name="author" placeholder="author's username"required/>
+    <input type="submit" value="Search"/>
+    <br><br>
+</form>
+
+{{message}}
+<br><br>
+{% for page in pages %} 
+<button onclick="window.location.href = '/author_page/<{{page}}>'">{{page}}</button>
+<br><br>
+{% endfor %}
+
+{% endblock %}
+    
